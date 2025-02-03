@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabbalah Interativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="menu">
+        <a href="https://alexxanorafa.github.io/Tempo_e_Sonhos/" class="menu-item">Tempo e Sonhos</a>
+        <a href="https://alexxanorafa.github.io/posicionamentodosastros/" class="menu-item">Mapa Astral</a>
+        <a href="https://alexxanorafa.github.io/Aneis_da_Sabedoria/" class="menu-item">Anéis da Sabedoria</a>
+        <a href="https://alexxanorafa.github.io/TarodeMarselha/" class="menu-item">Tarô de Marselha</a>
+        <a href="https://alexxanorafa.github.io/Runas-do-Destino/" class="menu-item">Runas do Destino</a>
+        <a href="https://alexxanorafa.github.io/O-Construtor-do-Destino/" class="menu-item">O Construtor do Destino</a>
+        <a href="https://alexxanorafa.github.io/Tabuleiro-Quantico/" class="menu-item">Tabuleiro Quantico</a>
+    </nav>
+    
+    <main id="game-container">
+        <button id="start-btn" class="btn">Iniciar Jogo</button>
+
+        <div id="question-panel" class="panel hidden">
+            <h2 id="current-question"></h2>
+            <div id="current-symbol" class="symbol"></div>
+        </div>
+
+        <div class="tree-of-life">
+            <div class="sefirah" id="keter">Keter<br>1</div>
+            <div class="sefirah" id="chokhmah">Chokhmah<br>2</div>
+            <div class="sefirah" id="binah">Binah<br>3</div>
+            <div class="sefirah" id="chesed">Chesed<br>4</div>
+            <div class="sefirah" id="gevurah">Gevurah<br>5</div>
+            <div class="sefirah" id="tiferet">Tiferet<br>6</div>
+            <div class="sefirah" id="netzach">Netzach<br>7</div>
+            <div class="sefirah" id="hod">Hod<br>8</div>
+            <div class="sefirah" id="yesod">Yesod<br>9</div>
+            <div class="sefirah" id="malkuth">Malkuth<br>10</div>
+        </div>
+
+        <div class="game-controls">
+            <div id="score">Pontuação: <span>0</span></div>
+            <button id="restart-btn" class="btn">Reiniciar</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

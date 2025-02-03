@@ -1,0 +1,211 @@
+/* MENU ORIGINAL */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    width: 100%;
+    background: transparent;
+    box-shadow: transparent;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    background-color: transparent;
+    border-radius: 4px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 0.9em;
+    font-weight: 250;
+    padding: 0 8px;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0 1px 2px transparent;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: #2c3e50;
+    color: #d4b192;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #d4b192;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu-item:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* ESTILOS DO JOGO */
+body {
+    background: linear-gradient(45deg, #1a1a1a, #2c3e50);
+    color: #d4b192;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Times New Roman', serif;
+}
+
+#game-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.panel {
+    background: rgba(44, 62, 80, 0.9);
+    border: 2px solid #d4b192;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(212, 177, 146, 0.2);
+}
+
+.tree-of-life {
+    position: relative;
+    min-height: 600px;
+    margin: 40px 0;
+}
+
+.sefirah {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #d4b192;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.9em;
+    background: rgba(44, 62, 80, 0.8);
+}
+
+/* Posicionamento das Sefirot */
+#keter { left: 50%; top: 5%; transform: translateX(-50%); }
+#chokhmah { left: 30%; top: 20%; }
+#binah { left: 70%; top: 20%; }
+#chesed { left: 20%; top: 40%; }
+#gevurah { left: 80%; top: 40%; }
+#tiferet { left: 50%; top: 50%; transform: translateX(-50%); }
+#netzach { left: 30%; top: 65%; }
+#hod { left: 70%; top: 65%; }
+#yesod { left: 50%; top: 80%; transform: translateX(-50%); }
+#malkuth { left: 50%; top: 95%; transform: translateX(-50%); }
+
+.symbol {
+    width: 60px;
+    height: 60px;
+    background: #2c3e50;
+    border: 2px solid #d4b192;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    position: absolute;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    box-shadow: 0 0 15px rgba(212, 177, 146, 0.3);
+    z-index: 10;
+}
+
+.btn {
+    background: linear-gradient(45deg, #2c3e50, #d4b192);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.correct {
+    animation: pulse 0.5s ease;
+    border-color: #4CAF50 !important;
+}
+
+.incorrect {
+    animation: shake 0.5s ease;
+    border-color: #f44336 !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(10px); }
+    50% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .tree-of-life {
+        min-height: 500px;
+    }
+    
+    .sefirah {
+        width: 50px;
+        height: 50px;
+        font-size: 0.6em;
+    }
+    
+    .symbol {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5em;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
